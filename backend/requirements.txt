@@ -1,0 +1,31 @@
+# Web framework
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Validation / settings
+pydantic>=2
+pydantic-settings
+email-validator
+
+# Database (async MongoDB)
+motor
+
+# Auth
+passlib[bcrypt]
+python-jose[cryptography]
+
+# ML / data
+torch
+numpy
+pandas
+scipy
+scikit-learn
+
+# LLM
+anthropic
+
+# Testing
+pytest
+pytest-asyncio
+httpx

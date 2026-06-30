@@ -1,0 +1,2 @@
+# Drop the pretrained PyTorch model artifact here, e.g. recgym_classifier.pt
+# (ignored by git — see root .gitignore). Path is set via ML_MODEL_PATH.
