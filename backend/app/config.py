@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
 
     # ML
-    ML_MODEL_PATH: str = "app/models/recgym_classifier.pt"
+    ML_MODEL_PATH: str = "app/models/model_weights.pt"
 
     # LLM
     LLM_API_KEY: str = ""
