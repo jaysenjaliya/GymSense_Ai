@@ -1,0 +1,18 @@
+# Production orchestration (e.g. AWS EC2).
+# Backend only — MongoDB is MongoDB Atlas (set MONGO_URI in backend/.env).
+# A host-level Nginx (see infra/nginx) terminates TLS and proxies to 127.0.0.1:8000.
+#
+#   docker compose -f docker-compose.prod.yml up -d --build
+#
+services:
+  backend:
+    build: ./backend
+    container_name: gymsense-backend
+    restart: always
+    # Bind to localhost only; Nginx on the host is the public entrypoint.
+    ports:
+      - "127.0.0.1:8000:8000"
+    env_file:
+      - ./backend/.env
+    environment:
+      WEB_CONCURRENCY: "1"

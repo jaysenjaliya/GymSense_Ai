@@ -20,9 +20,10 @@ class Settings(BaseSettings):
     # ML
     ML_MODEL_PATH: str = "app/models/model_weights.pt"
 
-    # LLM
+    # LLM (Groq — OpenAI-compatible chat completions)
     LLM_API_KEY: str = ""
-    LLM_MODEL: str = "claude-opus-4-8"
+    LLM_MODEL: str = "llama-3.3-70b-versatile"
+    LLM_BASE_URL: str = "https://api.groq.com/openai/v1"
 
     # CORS
     CORS_ORIGINS: str = "http://localhost:5173"

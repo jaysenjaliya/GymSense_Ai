@@ -26,9 +26,9 @@ async def init_indexes() -> None:
     """Create indexes for users / sessions / exercise_logs collections."""
     db = get_db()
     await db.users.create_index("email", unique=True)
-    # TODO (later phases):
-    # await db.sessions.create_index([("user_id", 1), ("created_at", -1)])
-    # await db.exercise_logs.create_index([("session_id", 1)])
+    await db.sessions.create_index([("user_id", 1), ("created_at", -1)])
+    await db.exercise_logs.create_index([("session_id", 1)])
+    await db.exercise_logs.create_index([("user_id", 1), ("created_at", -1)])
 
 
 async def close_client() -> None:

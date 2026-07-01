@@ -25,6 +25,8 @@ async def client(monkeypatch):
     monkeypatch.setenv("JWT_SECRET_KEY", "test-secret-key")
     monkeypatch.setenv("ACCESS_TOKEN_EXPIRE_MINUTES", "30")
     monkeypatch.setenv("REFRESH_TOKEN_EXPIRE_DAYS", "7")
+    # Force the offline LLM stub so tests never hit an external provider.
+    monkeypatch.setenv("LLM_API_KEY", "")
     get_settings.cache_clear()
 
     # Swap the shared Motor client for an in-memory mock (auto-restored after test).
