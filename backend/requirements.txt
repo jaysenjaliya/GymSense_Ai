@@ -13,6 +13,7 @@ motor
 
 # Auth
 passlib[bcrypt]
+bcrypt<5  # passlib 1.7.x is incompatible with bcrypt>=5 (72-byte self-test probe)
 python-jose[cryptography]
 
 # ML / data
@@ -29,3 +30,4 @@ anthropic
 pytest
 pytest-asyncio
 httpx
+mongomock-motor
